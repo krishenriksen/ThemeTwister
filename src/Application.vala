@@ -39,7 +39,7 @@ public class ThemeSwitcherWindow : Window {
         this.resizable = false;
         this.window_position = Gtk.WindowPosition.CENTER;
 
-        this.set_default_size (960, 670);
+        this.set_default_size (800, 400);
 
 
         var grid = new Grid();
@@ -78,11 +78,11 @@ public class ThemeSwitcherWindow : Window {
     	this.next.clicked.connect ( () => {
     		this.cancel_or_previous.label = "Previous";
 
-    		if (this.current_page < 7) {
+    		if (this.current_page < 2) {
 				this.current_page += 1;
     			stack.set_visible_child_name(this.current_page.to_string());
 
-    			if (this.current_page == 7) {
+    			if (this.current_page == 2) {
     				this.next.label = "Get Started";
     			}
     		}
@@ -92,14 +92,32 @@ public class ThemeSwitcherWindow : Window {
     	});
         grid.attach(this.next, 1, 1, 1, 1);
 
+		var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        main_box.get_style_context ().add_class ("themeswitcher_box");
+
         // add pages
         stack.add_named(new ThemeSwitcher.Welcome(), "1");
-        stack.add_named(new ThemeSwitcher.RaspbianX(), "2");
-        stack.add_named(new ThemeSwitcher.Nighthawk(), "3");
-        stack.add_named(new ThemeSwitcher.iRaspbian(), "4");
-        stack.add_named(new ThemeSwitcher.iRaspbianDark(), "5");
-        stack.add_named(new ThemeSwitcher.Raspbian95(), "6");
-        stack.add_named(new ThemeSwitcher.TwisterOS(), "7");
+        
+		var box1 = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        box1.get_style_context ().add_class ("themeswitcher_main_box");
+
+        box1.add(new ThemeSwitcher.TwisterOS());
+		box1.add(new ThemeSwitcher.Raspbian95());
+		box1.add(new ThemeSwitcher.RaspbianXP());
+		box1.add(new ThemeSwitcher.Nighthawk());
+
+        main_box.add(box1);
+
+		var box2 = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        box2.get_style_context ().add_class ("themeswitcher_main_box2");
+
+        box2.add(new ThemeSwitcher.RaspbianX());
+        box2.add(new ThemeSwitcher.iRaspbian());
+       	box2.add(new ThemeSwitcher.iRaspbianDark());
+
+        main_box.add(box2);
+
+        stack.add_named(main_box, "2");
 
 		this.show_all();
     }

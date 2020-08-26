@@ -25,11 +25,14 @@ namespace ThemeSwitcher {
     public class iRaspbianDark : Gtk.Box {
         public iRaspbianDark () {
             var wrapper = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            wrapper.get_style_context ().add_class ("welcome");        	
+            wrapper.get_style_context ().add_class ("theme");
 
-	        // logo
-	        var image = new Gtk.Image.from_file("/usr/local/share/themeswitcher/iraspbian-dark.png");
-	        image.get_style_context ().add_class ("themeswitcher_image");
+	        var pixbuf = new Gdk.Pixbuf.from_file("/usr/local/share/themeswitcher/iraspbian-dark.png");
+	        pixbuf = pixbuf.scale_simple(200, 112, Gdk.InterpType.BILINEAR);
+
+			var image = new Gtk.Image();
+			image.set_from_pixbuf(pixbuf);
+			image.get_style_context ().add_class ("themeswitcher_image");
 
 			wrapper.add(image);
 

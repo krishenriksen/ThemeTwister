@@ -25,11 +25,14 @@ namespace ThemeSwitcher {
     public class Raspbian95 : Gtk.Box {
         public Raspbian95 () {
             var wrapper = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            wrapper.get_style_context ().add_class ("welcome");        	
+            wrapper.get_style_context ().add_class ("theme");
 
-	        // logo
-	        var image = new Gtk.Image.from_file("/usr/local/share/themeswitcher/raspbian95.png");
-	        image.get_style_context ().add_class ("themeswitcher_image");
+	        var pixbuf = new Gdk.Pixbuf.from_file("/usr/local/share/themeswitcher/raspbian95.png");
+	        pixbuf = pixbuf.scale_simple(200, 112, Gdk.InterpType.BILINEAR);
+
+			var image = new Gtk.Image();
+			image.set_from_pixbuf(pixbuf);
+			image.get_style_context ().add_class ("themeswitcher_image");
 
 			wrapper.add(image);
 
