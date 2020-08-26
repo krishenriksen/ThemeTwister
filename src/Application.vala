@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2020 ThemeSwitcher
+* Copyright (c) 2011-2020 ThemeTwister
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -21,15 +21,15 @@
 
 using Gtk;
 
-public class ThemeSwitcherWindow : Window {
+public class ThemeTwisterWindow : Window {
 
 	private Stack stack;
 	private int current_page = 1;
 	private Button cancel_or_previous;
 	private Button next;
 
-    public ThemeSwitcherWindow () {
-        this.set_title ("themeswitcher");
+    public ThemeTwisterWindow () {
+        this.set_title ("themetwister");
         this.set_skip_pager_hint (true);
         this.set_skip_taskbar_hint (true); // Not display the window in the task bar
         this.set_decorated (false); // No window decoration
@@ -43,7 +43,7 @@ public class ThemeSwitcherWindow : Window {
 
 
         var grid = new Grid();
-        grid.get_style_context().add_class ("themeswitcher");
+        grid.get_style_context().add_class ("themetwister");
         this.add(grid);
 
         stack = new Stack();
@@ -93,27 +93,27 @@ public class ThemeSwitcherWindow : Window {
         grid.attach(this.next, 1, 1, 1, 1);
 
 		var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        main_box.get_style_context ().add_class ("themeswitcher_box");
+        main_box.get_style_context ().add_class ("themetwister_box");
 
         // add pages
-        stack.add_named(new ThemeSwitcher.Welcome(), "1");
+        stack.add_named(new ThemeTwister.Welcome(), "1");
         
 		var box1 = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        box1.get_style_context ().add_class ("themeswitcher_main_box");
+        box1.get_style_context ().add_class ("themetwister_main_box");
 
-        box1.add(new ThemeSwitcher.TwisterOS());
-		box1.add(new ThemeSwitcher.Raspbian95());
-		box1.add(new ThemeSwitcher.RaspbianXP());
-		box1.add(new ThemeSwitcher.Nighthawk());
+        box1.add(new ThemeTwister.TwisterOS());
+		box1.add(new ThemeTwister.Raspbian95());
+		box1.add(new ThemeTwister.RaspbianXP());
+		box1.add(new ThemeTwister.Nighthawk());
 
         main_box.add(box1);
 
 		var box2 = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        box2.get_style_context ().add_class ("themeswitcher_main_box2");
+        box2.get_style_context ().add_class ("themetwister_main_box2");
 
-        box2.add(new ThemeSwitcher.RaspbianX());
-        box2.add(new ThemeSwitcher.iRaspbian());
-       	box2.add(new ThemeSwitcher.iRaspbianDark());
+        box2.add(new ThemeTwister.RaspbianX());
+        box2.add(new ThemeTwister.iRaspbian());
+       	box2.add(new ThemeTwister.iRaspbianDark());
 
         main_box.add(box2);
 
@@ -131,7 +131,7 @@ public class ThemeSwitcherWindow : Window {
 
 static int main (string[] args) {
     Gtk.init (ref args);
-    Gtk.Application app = new Gtk.Application ("dk.krishenriksen.themeswitcher", GLib.ApplicationFlags.FLAGS_NONE);
+    Gtk.Application app = new Gtk.Application ("dk.krishenriksen.themetwister", GLib.ApplicationFlags.FLAGS_NONE);
 
     // check for light or dark theme
     File iraspbian = File.new_for_path (GLib.Environment.get_variable ("HOME") + "/.iraspbian-dark.twid");
@@ -139,7 +139,7 @@ static int main (string[] args) {
 
     string css_file = Config.PACKAGE_SHAREDIR +
         "/" + Config.PROJECT_NAME +
-        "/" + (iraspbian.query_exists() || nighthawk.query_exists() ? "themeswitcher_dark.css" : "themeswitcher.css");
+        "/" + (iraspbian.query_exists() || nighthawk.query_exists() ? "themetwister_dark.css" : "themetwister.css");
     var css_provider = new Gtk.CssProvider ();
 
     try {
@@ -151,7 +151,7 @@ static int main (string[] args) {
 
     app.activate.connect( () => {
         if (app.get_windows ().length () == 0) {
-            var main_window = new ThemeSwitcherWindow ();
+            var main_window = new ThemeTwisterWindow ();
             main_window.set_application (app);
             main_window.show();
             Gtk.main ();

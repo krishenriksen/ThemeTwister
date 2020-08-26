@@ -1,11 +1,11 @@
 project(
-    'themeswitcher',
+    'themetwister',
     'vala', 'c',
     version: '0.0.1',
     meson_version: '>=0.45.0'
 )
 
-PROJECT_NAME = 'themeswitcher'
+PROJECT_NAME = 'themetwister'
 prefix = get_option('prefix')
 libdir = join_paths(prefix, get_option('libdir'))
 datadir = join_paths(prefix, get_option('datadir'))
@@ -63,7 +63,12 @@ executable(
 
 # Install CSS file
 install_data(
-    join_paths('data', 'themeswitcher.css'),
+    join_paths('data', 'themetwister.css'),
+    install_dir: join_paths(datadir, PROJECT_NAME)
+)
+
+install_data(
+    join_paths('data', 'themetwister_dark.css'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )
 
@@ -94,11 +99,5 @@ install_data(
 )
 install_data(
     join_paths('data', 'twisteros.png'),
-    install_dir: join_paths(datadir, PROJECT_NAME)
-)
-
-
-install_data(
-    join_paths('data', 'themeswitcher_dark.css'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )

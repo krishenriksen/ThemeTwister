@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2020 ThemeSwitcher
+* Copyright (c) 2011-2020 ThemeTwister
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -21,29 +21,29 @@
 
 using Gtk;
 
-namespace ThemeSwitcher {
+namespace ThemeTwister {
     public class iRaspbianDark : Gtk.Box {
         public iRaspbianDark () {
             var wrapper = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             wrapper.get_style_context ().add_class ("theme");
 
-	        var pixbuf = new Gdk.Pixbuf.from_file("/usr/local/share/themeswitcher/iraspbian-dark.png");
+	        var pixbuf = new Gdk.Pixbuf.from_file("/usr/local/share/themetwister/iraspbian-dark.png");
 	        pixbuf = pixbuf.scale_simple(200, 112, Gdk.InterpType.BILINEAR);
 
 			var image = new Gtk.Image();
 			image.set_from_pixbuf(pixbuf);
-			image.get_style_context ().add_class ("themeswitcher_image");
+			image.get_style_context ().add_class ("themetwister_image");
 
 			wrapper.add(image);
 
             var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            button_box.get_style_context ().add_class ("themeswitcher_box");   
+            button_box.get_style_context ().add_class ("themetwister_box");   
 
 			var button = new Gtk.Button.with_label ("iRaspbian-Dark...");
-			button.get_style_context().add_class ("themeswitcher_button");
+			button.get_style_context().add_class ("themetwister_button");
 			button.clicked.connect (() => {
 		        try {
-		        	GLib.AppInfo info = AppInfo.create_from_commandline("xfce4-terminal --title=Config --hide-menubar --hide-borders --hide-scrollbar -e \"/usr/share/ThemeSwitcher/ThemeTwister.sh iRaspbian-Dark\"", null, AppInfoCreateFlags.SUPPORTS_STARTUP_NOTIFICATION);
+		        	GLib.AppInfo info = AppInfo.create_from_commandline("xfce4-terminal --title=Config --hide-menubar --hide-borders --hide-scrollbar -e \"/usr/share/ThemeTwister/ThemeTwister.sh iRaspbian-Dark\"", null, AppInfoCreateFlags.SUPPORTS_STARTUP_NOTIFICATION);
 		        	info.launch(null,Gdk.Display.get_default().get_app_launch_context());
 		        } catch (GLib.Error e){warning ("Could not load Config: %s", e.message);}
 			});

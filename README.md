@@ -1,5 +1,5 @@
-# Themeswitcher
-Themeswitcher GUI for TwisterOS.
+# ThemeTwister
+ThemeTwister GUI for TwisterOS.
 
 ## Building, Testing, and Installation
 
@@ -14,7 +14,7 @@ Run `meson build` to configure the build environment:
 This command creates a `build` directory. For all following commands, change to
 the build directory before running them.
 
-To build themeswitcher, use `ninja`:
+To build themetwister, use `ninja`:
 
     ninja
 

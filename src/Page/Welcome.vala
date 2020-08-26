@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2020 ThemeSwitcher
+* Copyright (c) 2011-2020 ThemeTwister
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -21,22 +21,22 @@
 
 using Gtk;
 
-namespace ThemeSwitcher {
+namespace ThemeTwister {
     public class Welcome : Gtk.Box {
         public Welcome () {
             var wrapper = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            wrapper.get_style_context ().add_class ("themeswitcher");        	
+            wrapper.get_style_context ().add_class ("themetwister");        	
 
 	        // logo
 	        var logo = new Gtk.Image.from_icon_name("twisteros", IconSize.DIALOG);
-			logo.get_style_context().add_class ("themeswitcher_logo");
+			logo.get_style_context().add_class ("themetwister_logo");
 
 			wrapper.add(logo);
 
 			var welcome_label = new Label("Change Your Theme");
 			welcome_label.set_property("can-focus", false);
 			
-			welcome_label.get_style_context ().add_class("themeswitcher_label");
+			welcome_label.get_style_context ().add_class("themetwister_label");
 
 			wrapper.add(welcome_label);
 
@@ -45,7 +45,7 @@ namespace ThemeSwitcher {
 			welcome_description.set_line_wrap(true);
 			welcome_description.set_lines(2);
 			welcome_description.set_justify(Justification.CENTER);
-			welcome_description.get_style_context ().add_class("themeswitcher_description");
+			welcome_description.get_style_context ().add_class("themetwister_description");
 
 			wrapper.add(welcome_description);
        
