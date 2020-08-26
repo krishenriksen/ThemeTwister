@@ -43,7 +43,7 @@ namespace ThemeSwitcher {
 			button.get_style_context().add_class ("themeswitcher_button");
 			button.clicked.connect (() => {
 		        try {
-		        	GLib.AppInfo info = AppInfo.create_from_commandline("xfce4-terminal --title=Config --hide-menubar --hide-borders --hide-scrollbar -e \"/usr/share/ThemeSwitcher/ThemeSwitcher.sh iRaspbian-Dark\"", null, AppInfoCreateFlags.SUPPORTS_STARTUP_NOTIFICATION);
+		        	GLib.AppInfo info = AppInfo.create_from_commandline("xfce4-terminal --title=Config --hide-menubar --hide-borders --hide-scrollbar -e \"/usr/share/ThemeSwitcher/ThemeTwister.sh iRaspbian-Dark\"", null, AppInfoCreateFlags.SUPPORTS_STARTUP_NOTIFICATION);
 		        	info.launch(null,Gdk.Display.get_default().get_app_launch_context());
 		        } catch (GLib.Error e){warning ("Could not load Config: %s", e.message);}
 			});
