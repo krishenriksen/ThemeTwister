@@ -83,7 +83,7 @@ public class ThemeTwisterWindow : Window {
     			stack.set_visible_child_name(this.current_page.to_string());
 
     			if (this.current_page == 2) {
-    				this.next.label = "Get Started";
+    				this.next.label = "Close";
     			}
     		}
     		else {
