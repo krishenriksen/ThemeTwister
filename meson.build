@@ -102,3 +102,7 @@ install_data(
     join_paths('data', 'twisteros.png'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )
+install_data(
+    join_paths('data', 'raspbian7.png'),
+    install_dir: join_paths(datadir, PROJECT_NAME)
+)
