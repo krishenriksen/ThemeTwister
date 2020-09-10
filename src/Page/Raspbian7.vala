@@ -22,8 +22,8 @@
 using Gtk;
 
 namespace ThemeTwister {
-    public class RaspbianX : Gtk.Box {
-        public RaspbianX () {
+    public class Raspbian7 : Gtk.Box {
+        public Raspbian7 () {
             var wrapper = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             wrapper.get_style_context ().add_class ("theme");
 

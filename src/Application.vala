@@ -114,6 +114,7 @@ public class ThemeTwisterWindow : Window {
         box2.add(new ThemeTwister.RaspbianX());
         box2.add(new ThemeTwister.iRaspbian());
        	box2.add(new ThemeTwister.iRaspbianDark());
+       	box2.add(new ThemeTwister.Raspbian7());
 
         main_box.add(box2);
 

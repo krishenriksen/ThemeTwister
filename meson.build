@@ -48,6 +48,7 @@ executable(
     'src/Page/Raspbian95.vala',
     'src/Page/RaspbianXP.vala',
     'src/Page/TwisterOS.vala',
+    'src/Page/Raspbian7.vala',
     dependencies: [
         dependency('gtk+-3.0', version: '>=3.22'),
         dependency('cairo', version: '>=1.15.0'),
