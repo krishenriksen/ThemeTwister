@@ -39,7 +39,7 @@ namespace ThemeTwister {
             var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             button_box.get_style_context ().add_class ("themetwister_box");   
 
-			var button = new Gtk.Button.with_label ("RaspbianX...");
+			var button = new Gtk.Button.with_label ("Raspbian7...");
 			button.get_style_context().add_class ("themetwister_button");
 			button.clicked.connect (() => {
 		        try {
