@@ -1,6 +1,8 @@
 # ThemeTwister
 ThemeTwister GUI for TwisterOS.
 
+![Spotlight Screenshot](turn-your-raspberry-pi-into-a-mac-or-pc-with-twister-os-picture-1-YhiRtIK3A.jpg?raw=true)
+
 ## Building, Testing, and Installation
 
 ```
