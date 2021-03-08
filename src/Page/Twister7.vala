@@ -22,12 +22,12 @@
 using Gtk;
 
 namespace ThemeTwister {
-    public class RaspbianX : Gtk.Box {
-        public RaspbianX () {
+    public class Twister7 : Gtk.Box {
+        public Twister7 () {
             var wrapper = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             wrapper.get_style_context ().add_class ("theme");
 
-	        var pixbuf = new Gdk.Pixbuf.from_file("/usr/local/share/themetwister/raspbianx.png");
+	        var pixbuf = new Gdk.Pixbuf.from_file("/usr/local/share/themetwister/Raspbian7.png");
 	        pixbuf = pixbuf.scale_simple(200, 112, Gdk.InterpType.BILINEAR);
 
 			var image = new Gtk.Image();
@@ -39,11 +39,11 @@ namespace ThemeTwister {
             var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             button_box.get_style_context ().add_class ("themetwister_box");   
 
-			var button = new Gtk.Button.with_label ("RaspbianX...");
-			button.get_style_context().add_class ("themetwister_button");
+			var button = new Gtk.Button.with_label ("Twister 7");
+			button.get_style_context().add_class ("themetwister_button_large");
 			button.clicked.connect (() => {
 		        try {
-		        	GLib.AppInfo info = AppInfo.create_from_commandline("xfce4-terminal --title=Config --hide-menubar --hide-borders --hide-scrollbar -e \"/usr/share/ThemeSwitcher/ThemeTwister.sh RaspbianX\"", null, AppInfoCreateFlags.SUPPORTS_STARTUP_NOTIFICATION);
+		        	GLib.AppInfo info = AppInfo.create_from_commandline("xfce4-terminal --title=Config --hide-menubar --hide-borders --hide-scrollbar -e \"/usr/share/ThemeSwitcher/ThemeTwister.sh Raspbian7\"", null, AppInfoCreateFlags.SUPPORTS_STARTUP_NOTIFICATION);
 		        	info.launch(null,Gdk.Display.get_default().get_app_launch_context());
 		        } catch (GLib.Error e){warning ("Could not load Config: %s", e.message);}
 			});

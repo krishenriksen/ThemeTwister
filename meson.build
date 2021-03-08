@@ -41,14 +41,13 @@ executable(
     meson.project_name(),
     'src/Application.vala',
     'src/Page/Welcome.vala',
-    'src/Page/RaspbianX.vala',
-    'src/Page/Nighthawk.vala',
-    'src/Page/iRaspbian.vala',
-    'src/Page/iRaspbianDark.vala',
-    'src/Page/Raspbian95.vala',
-    'src/Page/RaspbianXP.vala',
     'src/Page/TwisterOS.vala',
-    'src/Page/Raspbian7.vala',
+    'src/Page/Twister95.vala',
+    'src/Page/TwisterXP.vala',
+    'src/Page/Twister7.vala',
+    'src/Page/Twister10.vala',
+    'src/Page/iTwister.vala',
+    'src/Page/iTwisterSur.vala',
     dependencies: [
         dependency('gtk+-3.0', version: '>=3.22'),
         dependency('cairo', version: '>=1.15.0'),
@@ -75,34 +74,30 @@ install_data(
 
 # Install images
 install_data(
-    join_paths('data', 'raspbianx.png'),
+    join_paths('data', 'iRaspbian.png'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )
 install_data(
-    join_paths('data', 'nighthawk.png'),
+    join_paths('data', 'iRaspbianSur.png'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )
 install_data(
-    join_paths('data', 'iraspbian.png'),
+    join_paths('data', 'Raspbian7.png'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )
 install_data(
-    join_paths('data', 'iraspbian-dark.png'),
+    join_paths('data', 'Raspbian95.png'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )
 install_data(
-    join_paths('data', 'raspbian95.png'),
+    join_paths('data', 'RaspbianX.png'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )
 install_data(
-    join_paths('data', 'raspbianxp.png'),
+    join_paths('data', 'RaspbianXP.png'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )
 install_data(
-    join_paths('data', 'twisteros.png'),
-    install_dir: join_paths(datadir, PROJECT_NAME)
-)
-install_data(
-    join_paths('data', 'raspbian7.png'),
+    join_paths('data', 'TwisterOS.png'),
     install_dir: join_paths(datadir, PROJECT_NAME)
 )

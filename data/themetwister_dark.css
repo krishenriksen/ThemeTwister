@@ -58,6 +58,12 @@
 	font-weight: 300;
 }
 
+.themetwister .themetwister_description_label {
+	margin: 0 0 10px 0;
+	font-size: 18px;
+	font-weight: 300;
+}
+
 .themetwister .theme {
 	margin: 0;
 	padding: 0;
@@ -72,7 +78,11 @@
 }
 
 .themetwister button.themetwister_button {
-	margin: 0 0 20px 60px;
+	margin: 0 0 10px 40px;
+}
+
+.themetwister button.themetwister_button_large {
+	margin: 0 0 10px 60px;
 }
 
 .themetwister .themetwister_main_box2 {

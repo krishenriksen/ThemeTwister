@@ -102,19 +102,18 @@ public class ThemeTwisterWindow : Window {
         box1.get_style_context ().add_class ("themetwister_main_box");
 
         box1.add(new ThemeTwister.TwisterOS());
-		box1.add(new ThemeTwister.Raspbian95());
-		box1.add(new ThemeTwister.RaspbianXP());
-		box1.add(new ThemeTwister.Nighthawk());
+		box1.add(new ThemeTwister.Twister95());
+		box1.add(new ThemeTwister.TwisterXP());
+		box1.add(new ThemeTwister.Twister7());
 
         main_box.add(box1);
 
 		var box2 = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         box2.get_style_context ().add_class ("themetwister_main_box2");
 
-        box2.add(new ThemeTwister.RaspbianX());
-        box2.add(new ThemeTwister.iRaspbian());
-       	box2.add(new ThemeTwister.iRaspbianDark());
-       	box2.add(new ThemeTwister.Raspbian7());
+        box2.add(new ThemeTwister.Twister10());
+        box2.add(new ThemeTwister.iTwister());
+       	box2.add(new ThemeTwister.iTwisterSur());
 
         main_box.add(box2);
 
@@ -138,9 +137,12 @@ static int main (string[] args) {
     File iraspbian = File.new_for_path (GLib.Environment.get_variable ("HOME") + "/.iraspbian-dark.twid");
     File nighthawk = File.new_for_path (GLib.Environment.get_variable ("HOME") + "/.nighthawk.twid");
 
+    File twisteros = File.new_for_path (GLib.Environment.get_variable ("HOME") + "/.twisteros-dark.twid");
+    File iraspbiansur = File.new_for_path (GLib.Environment.get_variable ("HOME") + "/.iraspbiansur-dark.twid");    
+
     string css_file = Config.PACKAGE_SHAREDIR +
         "/" + Config.PROJECT_NAME +
-        "/" + (iraspbian.query_exists() || nighthawk.query_exists() ? "themetwister_dark.css" : "themetwister.css");
+        "/" + (iraspbian.query_exists() || nighthawk.query_exists() || twisteros.query_exists() || iraspbiansur.query_exists() ? "themetwister_dark.css" : "themetwister.css");
     var css_provider = new Gtk.CssProvider ();
 
     try {
